@@ -18,7 +18,7 @@ client.on('unhandledRejection', err => console.error(`Uncaught Promise Rejection
 
 client.on("message", (message) => {
   const args = message.content.slice(prefix.length).split(/ +/);
-  if (message.startsWith(";say")) {
+  if (message.content.startsWith(";say")) {
       message.delete();
       const user = message.mentions.members.first()
       const msg = message[2]
