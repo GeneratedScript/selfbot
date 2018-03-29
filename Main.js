@@ -17,16 +17,17 @@ client.on('unhandledRejection', err => console.error(`Uncaught Promise Rejection
 
 
 client.on("message", (message) => {
-const args = message.content.slice(prefix.length).split(/ +/);
-    if(message.startsWith(";say"){
-       message.delete();
-    const user = message.mentions.members.first()
-        const msg = message[2]
-         message.channel.createWebhook(user.username, user.AvatarURL)
-    .then(function (webhook){
-        webhook.send(msg);
-})
-    })
+  const args = message.content.slice(prefix.length).split(/ +/);
+  if (message.startsWith(";say")) {
+      message.delete();
+      const user = message.mentions.members.first()
+      const msg = message[2]
+      message.channel.createWebhook(user.username, user.AvatarURL)
+          .then(function (webhook) {
+              webhook.send(msg);
+          }
+      )
+  }
 })
 
 
